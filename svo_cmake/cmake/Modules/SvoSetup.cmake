@@ -4,7 +4,10 @@ SET(CMAKE_VERBOSE_MAKEFILE OFF)
 
 # user build settings
 SET(USE_LOOP_CLOSING TRUE)
-SET(USE_GLOBAL_MAP FALSE)
+
+# zzwu modify for global map
+# SET(USE_GLOBAL_MAP FALSE)
+SET(USE_GLOBAL_MAP TRUE)
 
 # Set definitions
 IF(USE_LOOP_CLOSING)

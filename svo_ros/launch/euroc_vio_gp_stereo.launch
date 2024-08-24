@@ -31,6 +31,10 @@
     <param name="imu_temporal_window_length_sec" type="double" value="0.5" />
     <param name="stationary_acc_sigma_thresh" type="double" value="0.05" />
     <param name="stationary_gyr_sigma_thresh" type="double" value="0.002" />
+
+    <!-- Loop closure detection parameters -->
+    <param name="runlc" value="true" />
+    
   </node>
 
   <!-- RVIZ -->

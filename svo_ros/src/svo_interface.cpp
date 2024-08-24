@@ -124,7 +124,7 @@ SvoInterface::SvoInterface(
 #endif
   if(vk::param<bool>(pnh_, "runlc", false))
   {
-    LOG(FATAL) << "Loop closure is not supported in this version of SVO!";
+    // LOG(FATAL) << "Loop closure is not supported in this version of SVO!";
 
 #ifdef SVO_LOOP_CLOSING
     LoopClosingPtr loop_closing_ptr =

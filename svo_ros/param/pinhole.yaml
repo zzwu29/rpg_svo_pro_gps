@@ -71,6 +71,8 @@ grid_size: 30 # Larger for larger images, for every cell you have max one featur
 n_pyr_levels: 3 # Increase for larger images (image align max minus one)
 detector_threshold_primary: 10 # Fast detector threshold
 detector_threshold_secondary: 200 # Edgelet detector threshold
+detector_threshold_shitomasi: 100 # Shi-Tomasi detector threshold (default 100)
+use_edgelets: True  # if use edgelet feature (default True)
 
 # Image Alignment
 img_align_max_level: 4 # Increase this level by one if the image is double the width and height (752x480).

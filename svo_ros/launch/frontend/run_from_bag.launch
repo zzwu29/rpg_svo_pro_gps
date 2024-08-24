@@ -7,9 +7,13 @@
   <node pkg="svo_ros" type="svo_node" name="svo" clear_params="true" output="screen" >
 
     <!-- Camera topic to subscribe to -->
-    <!-- <param name="cam0_topic" value="camera/image_raw" type="str" /> -->
+    <!-- euroc -->
+    <!-- <param name="cam0_topic" value="cam0/image_raw" type="str" /> -->
 
+    <!-- gazebo default -->
     <!-- <param name="cam0_topic" value="/iris/camera/rgb/image_raw" type="str" /> -->
+
+    <!-- usr cam -->
     <param name="cam0_topic" value="/camera/image_color" type="str" />
 
     <!-- Camera calibration file -->

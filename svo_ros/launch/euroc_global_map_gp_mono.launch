@@ -4,14 +4,14 @@
   <arg name="gp_settings_file" default="$(find svo_ros)/param/gp_settings.yaml"/>
 
   <!-- SVO node -->
-  <node pkg="svo_ros" type="svo_node" name="svo" clear_params="true" output="screen" args="--v=2" >
+  <node pkg="svo_ros" type="svo_node" name="svo" clear_params="true" output="screen" args="--v=0" >
 
     <!-- Camera topic to subscribe to -->
     <param name="cam0_topic" value="/cam0/image_raw" type="str" />
 	
     <!-- Imu topic to subscribe to -->
     <param name="imu_topic" value="/imu0" type="str" />
-
+    
     <!-- Global position topic to subscribe to -->
     <param name="gp_topic" value="/gp_data" type="str" />
 
@@ -22,8 +22,8 @@
     <param name="gp_settings_file" value="$(arg gp_settings_file)" />
 
     <!--Parameters-->
-    <rosparam file="$(find svo_ros)/param/vio_mono.yaml" />
-    
+    <rosparam file="$(find svo_ros)/param/global_map.yaml" />
+
     <param name="use_global_measurements" value="true" />
 
     <param name="imu_temporal_stationary_check" value="true" />
@@ -32,10 +32,10 @@
     <param name="stationary_gyr_sigma_thresh" type="double" value="0.002" />
 
     <!-- Loop closure detection parameters -->
-    <param name="runlc" value="true" />
+    <param name="runlc" value='true' />
     
   </node>
 
   <!-- RVIZ -->
-  <node name="vis" pkg="rviz" type="rviz" args=" -d $(find svo_ros)/rviz_config_vio.rviz" />
+  <node name="vis" pkg="rviz" type="rviz" args=" -d $(find svo_ros)/rviz_config_gm.rviz" />
 </launch>

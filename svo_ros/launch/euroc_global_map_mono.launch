@@ -1,7 +1,8 @@
 <!-- Launch File for running svo with ceres backend from bag-file -->
 <launch>
   <arg name="calib_file" default="$(find svo_ros)/param/calib/euroc_mono.yaml"/>
-
+  <arg name="gp_settings_file" default="$(find svo_ros)/param/gp_settings.yaml"/>
+  
   <!-- SVO node -->
   <node pkg="svo_ros" type="svo_node" name="svo" clear_params="true" output="screen" args="--v=0" >
 
@@ -13,10 +14,22 @@
 
     <!-- Camera calibration file -->
     <param name="calib_file" value="$(arg calib_file)" />
+    
+    <!-- Global position settings file -->
+    <param name="gp_settings_file" value="$(arg gp_settings_file)" />
 
     <!--Parameters-->
     <rosparam file="$(find svo_ros)/param/global_map.yaml" />
-    <param name="runlc" value="true" />
+
+    <param name="use_global_measurements" value="false" />
+
+    <param name="imu_temporal_stationary_check" value="true" />
+    <param name="imu_temporal_window_length_sec" type="double" value="0.5" />
+    <param name="stationary_acc_sigma_thresh" type="double" value="0.05" />
+    <param name="stationary_gyr_sigma_thresh" type="double" value="0.002" />
+
+    <!-- Loop closure detection parameters -->
+    <param name="runlc" value='true' />
     
   </node>
 

@@ -1,0 +1,74 @@
+label: "Euroc"
+id: 412eab8e4058621f7036b5e765dfe812
+cameras:
+- camera:
+    label: cam0
+    id: 54812562fa109c40fe90b29a59dd7798
+    line-delay-nanoseconds: 0
+    image_height: 480
+    image_width: 848
+    type: pinhole
+    intrinsics:
+      cols: 1
+      rows: 4
+      data: [429.11742235319616, 429.38749753720265, 421.9677613181904, 240.9380286895108]
+    distortion:
+      type: radial-tangential  
+      parameters:
+        cols: 1
+        rows: 4
+        data: [0.00362404318313481, -0.0036864428526139086, 0.00021308089724962124, 0.0003514341809769414]
+  T_B_C:
+    cols: 4
+    rows: 4
+    data:  [ 0.9999667712377107, 0.0020328263648032143, -0.007894557454220063, 0.029839778133681542,
+            -0.0020470962125097216, 0.9999962848799717, -0.0017998953721496483, 0.000491437521497293,
+            0.00789086925022516, 0.0018159964825181561, 0.9999672176322836, -0.010601066737664398,
+            0.0, 0.0, 0.0, 1.0]
+- camera:
+    label: cam1
+    id: 54812562fa109c40fe90b29a59dd7723
+    line-delay-nanoseconds: 0
+    image_height: 480
+    image_width: 848
+    type: pinhole
+
+    intrinsics:
+      cols: 1
+      rows: 4
+      data: [428.73604284844663, 429.0586757992383, 421.2523509342443, 240.93570203969222]
+    distortion:
+      type: radial-tangential  
+      parameters:
+        cols: 1
+        rows: 4
+        data: [0.005677101551826762, -0.00667142047719686, 2.882803884398907e-05, -0.0003478132606792772]
+  T_B_C:
+    cols: 4
+    rows: 4
+    data: [0.9999857546111857, 0.001953775504144962, -0.004967226185437227, -0.0652834393743231,
+          -0.001965814750756516, 0.9999951395491942, -0.0024200104036047904, 0.000488461129801335,
+          0.004962473885432373, 0.0024297405761213326, 0.9999847349903245, -0.01077438059345244,
+          0.0, 0.0, 0.0, 1.0]
+
+imu_params:
+  delay_imu_cam: 0.0  #-0.02673
+  max_imu_delta_t: 0.01
+  acc_max: 176.0
+  omega_max: 17
+  sigma_omega_c:  0.005 
+  sigma_acc_c:  0.005 
+  sigma_omega_bias_c: 4.0e-06
+  sigma_acc_bias_c: 0.0001 
+  sigma_integration: 0.0
+  g: 9.8082
+  imu_rate: 200
+
+imu_initialization:
+  velocity: [0.0, 0, 0.0]
+  omega_bias: [0.0, 0, 0.0]
+  acc_bias: [0.0, 0.0, 0.0]
+  velocity_sigma: 2.0
+  omega_bias_sigma: 0.01
+  acc_bias_sigma: 0.1
+
